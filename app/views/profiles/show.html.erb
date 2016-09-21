@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rock style:</strong>
+  <%= @profile.rock_style %>
+</p>
+
+<p>
+  <strong>Pop style:</strong>
+  <%= @profile.pop_style %>
+</p>
+
+<p>
+  <strong>Classical style:</strong>
+  <%= @profile.classical_style %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @profile.level %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

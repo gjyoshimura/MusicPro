@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920190338) do
+ActiveRecord::Schema.define(version: 20160920195208) do
 
   create_table "instruments", force: :cascade do |t|
     t.string   "name"
@@ -20,15 +20,27 @@ ActiveRecord::Schema.define(version: 20160920190338) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_has_instruments", force: :cascade do |t|
-    t.integer  "user_id"
+  create_table "profile_has_instruments", force: :cascade do |t|
+    t.integer  "profile_id"
     t.integer  "instrument_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "user_has_instruments", ["instrument_id"], name: "index_user_has_instruments_on_instrument_id"
-  add_index "user_has_instruments", ["user_id"], name: "index_user_has_instruments_on_user_id"
+  add_index "profile_has_instruments", ["instrument_id"], name: "index_profile_has_instruments_on_instrument_id"
+  add_index "profile_has_instruments", ["profile_id"], name: "index_profile_has_instruments_on_profile_id"
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "rock_style"
+    t.integer  "pop_style"
+    t.integer  "classical_style"
+    t.integer  "level"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

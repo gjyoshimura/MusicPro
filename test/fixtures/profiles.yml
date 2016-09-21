@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rock_style: 1
+  pop_style: 1
+  classical_style: 1
+  level: 1
+  user_id: 
+
+two:
+  rock_style: 1
+  pop_style: 1
+  classical_style: 1
+  level: 1
+  user_id: 
