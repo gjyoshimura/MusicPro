@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profile_has_instruments
   resources :profiles
   resources :instruments
   get 'home/index'

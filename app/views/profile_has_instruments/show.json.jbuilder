@@ -1,0 +1,1 @@
+json.partial! "profile_has_instruments/profile_has_instrument", profile_has_instrument: @profile_has_instrument
