@@ -24,7 +24,9 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
+    pp = profile_params
+    pp[:user_id] = current_user.id
+    @profile = Profile.new(pp)
 
     respond_to do |format|
       if @profile.save
@@ -40,8 +42,10 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    pp = profile_params
+    pp[:user_id] = current_user.id
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @profile.update(pp)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
