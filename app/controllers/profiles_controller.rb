@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  skip_before_action :check_for_created_profile, only: [:new, :create]
+  
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -30,7 +32,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to new_profile_has_instrument_path, notice: 'Style was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -46,7 +48,7 @@ class ProfilesController < ApplicationController
     pp[:user_id] = current_user.id
     respond_to do |format|
       if @profile.update(pp)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Style was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }

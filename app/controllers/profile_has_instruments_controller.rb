@@ -21,6 +21,7 @@ class ProfileHasInstrumentsController < ApplicationController
 
   # GET /profile_has_instruments/1/edit
   def edit
+    @instruments = Instrument.all
   end
 
   # POST /profile_has_instruments
@@ -32,7 +33,7 @@ class ProfileHasInstrumentsController < ApplicationController
 
     respond_to do |format|
       if @profile_has_instrument.save
-        format.html { redirect_to @profile_has_instrument, notice: 'Profile has instrument was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Instrument was successfully selected.' }
         format.json { render :show, status: :created, location: @profile_has_instrument }
       else
         format.html { render :new }
@@ -48,7 +49,7 @@ class ProfileHasInstrumentsController < ApplicationController
     params[:profile_id] = Profile.find_by_user_id(current_user.id).user_id
     respond_to do |format|
       if @profile_has_instrument.update(params)
-        format.html { redirect_to @profile_has_instrument, notice: 'Profile has instrument was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Instrument was successfully changed.' }
         format.json { render :show, status: :ok, location: @profile_has_instrument }
       else
         format.html { render :edit }
