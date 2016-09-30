@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lessons
   resources :profile_has_instruments
   resources :profiles
   resources :instruments
