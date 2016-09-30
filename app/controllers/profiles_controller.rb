@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   skip_before_action :check_for_created_profile, only: [:new, :create]
   
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :check_signed_in
 
   # GET /profiles
   # GET /profiles.json

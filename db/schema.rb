@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921190418) do
+ActiveRecord::Schema.define(version: 20160930140242) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["lesson_id"], name: "index_comments_on_lesson_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "instruments", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +30,18 @@ ActiveRecord::Schema.define(version: 20160921190418) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "video_url"
+    t.string   "author"
+    t.integer  "topic_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "lessons", ["topic_id"], name: "index_lessons_on_topic_id"
 
   create_table "profile_has_instruments", force: :cascade do |t|
     t.integer  "profile_id"
@@ -41,6 +64,13 @@ ActiveRecord::Schema.define(version: 20160921190418) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
