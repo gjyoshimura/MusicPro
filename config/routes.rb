@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :topics
+  resources :comments
+  resources :topics
   resources :lessons
   resources :profile_has_instruments
   resources :profiles
