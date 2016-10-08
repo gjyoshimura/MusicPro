@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'autoprefixer-rails'
+
+# youtube api
+gem 'yt', '~> 0.13.7'
+gem 'bootstrap-sass', '~> 3.3.0.1'
 gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

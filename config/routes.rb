@@ -66,5 +66,8 @@ Rails.application.routes.draw do
 
   root :to => "home#index"
 
-
+resources :videos, only: [:index, :new, :create]
+#root to: 'videos#index'
 end
+
+
