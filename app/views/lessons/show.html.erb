@@ -37,8 +37,8 @@
     <% end %>
   </table>
 </div>
+<br>
+<br>
+<%= render :partial => "comments/form", :locals => {:comment => Comment.new, :lesson => @lesson.id} %>
 
- <% # render :partial => "comments/form", :locals => {:comment => Comment.new} %>
-
-<!-- <%= link_to 'Edit', edit_lesson_path(@lesson) %> | -->
 <%= link_to 'Back', lessons_path %>
