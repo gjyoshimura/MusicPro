@@ -1,6 +1,7 @@
 class ProfileHasInstrumentsController < ApplicationController
   before_action :set_profile_has_instrument, only: [:show, :edit, :update, :destroy]
   before_action :check_signed_in
+  before_action :check_is_admin, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /profile_has_instruments
   # GET /profile_has_instruments.json

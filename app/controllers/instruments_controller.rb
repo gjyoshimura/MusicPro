@@ -1,6 +1,7 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
   before_action :check_signed_in
+  before_action :check_is_admin
 
   # GET /instruments
   # GET /instruments.json

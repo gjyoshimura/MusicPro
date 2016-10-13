@@ -19,4 +19,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_is_admin
+    if not current_user.id == 1
+      redirect_to root_path
+    end
+  end
+
 end

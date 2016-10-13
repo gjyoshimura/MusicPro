@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   before_action :check_signed_in
+  before_action :check_is_admin, only: [:edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json

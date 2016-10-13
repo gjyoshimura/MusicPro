@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :check_signed_in
+  before_action :check_is_admin, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json

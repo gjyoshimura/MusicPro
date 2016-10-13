@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   before_action :check_signed_in
+  before_action :check_is_admin
 
   # GET /topics
   # GET /topics.json
