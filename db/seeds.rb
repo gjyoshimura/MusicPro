@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+instruments = Instrument.create([{ name: 'Guitar', image_path: './images/guitar.jpg' }, { name: 'Bass', image_path: './images/bass.jpg'}])
+styles = Style.create([{ name: 'Rock' }, { name: 'Pop' }, { name: 'Classical' }])
