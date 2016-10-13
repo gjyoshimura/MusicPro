@@ -11,8 +11,9 @@
 </p>
 
 <p>
-  <strong>Video url:</strong>
-  <%= @lesson.video_url %>
+  <div id = "youtube_video">
+      <center><iframe width="560" height="315" src=<%= @lesson.video_url %> frameborder="0" allowfullscreen></iframe></center>
+   </div>
 </p>
 
 <p>
@@ -22,8 +23,22 @@
 
 <p>
   <strong>Topic:</strong>
-  <%= @lesson.topic %>
+  <%= @lesson.topic.name %>
 </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<div>
+  <strong>Comments:</strong><br>
+  <table>
+    <% Comment.where("lesson_id = ?", @lesson.id).select("body, user_id").each do |comment| %>
+      <tr>
+        <td> <%= comment.user.email %>: </td>
+        <td> <%= comment.body %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+ <% # render :partial => "comments/form", :locals => {:comment => Comment.new} %>
+
+<!-- <%= link_to 'Edit', edit_lesson_path(@lesson) %> | -->
 <%= link_to 'Back', lessons_path %>
