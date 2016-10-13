@@ -12,21 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :rock_style %><br>
-    <%= f.number_field :rock_style %>
+    <%= f.label "Style" %><br>
+    <select id="style_id" name="profile[style_id]">
+      <option value="" ></option>
+      <% @styles.each do |style| %>
+        <option value= <%= style.id %> > 
+          <%= Style.find(style.id).name %> 
+        </option>
+      <% end %>
+    </select>
   </div>
-  <div class="field">
-    <%= f.label :pop_style %><br>
-    <%= f.number_field :pop_style %>
-  </div>
-  <div class="field">
-    <%= f.label :classical_style %><br>
-    <%= f.number_field :classical_style %>
-  </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :level %><br>
     <%= f.number_field :level %>
-  </div>
+  </div> -->
   <!-- <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>

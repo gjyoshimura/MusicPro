@@ -5,9 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Rock style</th>
-      <th>Pop style</th>
-      <th>Classical style</th>
+      <th>Style</th>
       <th>Level</th>
       <th>User</th>
       <th colspan="3"></th>
@@ -17,9 +15,7 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.rock_style %></td>
-        <td><%= profile.pop_style %></td>
-        <td><%= profile.classical_style %></td>
+        <td><%= profile.style_id %></td>
         <td><%= profile.level %></td>
         <td><%= profile.user %></td>
         <td><%= link_to 'Show', profile %></td>

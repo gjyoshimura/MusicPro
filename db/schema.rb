@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930140242) do
+ActiveRecord::Schema.define(version: 20161013104815) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -54,16 +54,21 @@ ActiveRecord::Schema.define(version: 20160930140242) do
   add_index "profile_has_instruments", ["profile_id"], name: "index_profile_has_instruments_on_profile_id"
 
   create_table "profiles", force: :cascade do |t|
-    t.integer  "rock_style"
-    t.integer  "pop_style"
-    t.integer  "classical_style"
     t.integer  "level"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "style_id"
   end
 
+  add_index "profiles", ["style_id"], name: "index_profiles_on_style_id"
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "styles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"

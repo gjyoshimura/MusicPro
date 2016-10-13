@@ -8,6 +8,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @styles = Style.all
   end
 
   # GET /profiles/1
@@ -18,6 +19,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
+    @styles = Style.all
   end
 
   # GET /profiles/1/edit
@@ -29,6 +31,7 @@ class ProfilesController < ApplicationController
   def create
     pp = profile_params
     pp[:user_id] = current_user.id
+    pp[:level] = 1
     @profile = Profile.new(pp)
 
     respond_to do |format|
@@ -76,6 +79,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:rock_style, :pop_style, :classical_style, :level, :user_id)
+      params.require(:profile).permit(:style_id, :level, :user_id)
     end
 end
