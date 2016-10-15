@@ -17,6 +17,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    @topics = Topic.all
   end
 
   # GET /lessons/1/edit

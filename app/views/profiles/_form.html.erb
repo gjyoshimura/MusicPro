@@ -14,7 +14,6 @@
   <div class="field">
     <%= f.label "Style" %><br>
     <select id="style_id" name="profile[style_id]">
-      <option value="" ></option>
       <% @styles.each do |style| %>
         <option value= <%= style.id %> > 
           <%= Style.find(style.id).name %> 
