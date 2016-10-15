@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get "/home", to: "lyris#Home", as: "home"
+  get "/listOfcourses", to: "lyris#ListOfCourses", as: "listOfCourses"
+  get "/listOflessons", to: "lyris#ListOfLessons", as: "listOfLessons"
+  get "/lesson", to: "lyris#Lesson", as: "lesson"
+
   resources :styles
   resources :topics
   resources :comments
@@ -65,7 +71,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => "home#index"
+  root :to => "lyris#Home"
 
 
 end

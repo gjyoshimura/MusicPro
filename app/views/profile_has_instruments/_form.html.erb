@@ -22,7 +22,6 @@
   <div class="field">
     <%= f.label "Instrument" %><br>
     <select id="instrument_profile_id" name="profile_has_instrument[instrument_id]">
-      <option value="" ></option>
       <% @instruments.each do |instrument| %>
         <option value= <%= instrument.id %> > 
           <%= Instrument.find(instrument.id).name %> 
