@@ -3,6 +3,14 @@
 <p>
   <strong>Name:</strong>
   <%= @style.name %>
+  
+  <strong>litle_description:</strong>
+  <%= @style.litle_description %>
+  
+  <strong>description:</strong>
+  <%= @style.description %>
+  
+  <%= image_tag @style.avatar %>
 </p>
 
 <%= link_to 'Edit', edit_style_path(@style) %> |

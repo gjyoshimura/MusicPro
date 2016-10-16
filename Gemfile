@@ -54,3 +54,5 @@ group :development do
   gem 'spring'
 end
 
+gem "font-awesome-rails"
+gem "paperclip", "~> 5.0.0"

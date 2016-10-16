@@ -68,8 +68,12 @@ ActiveRecord::Schema.define(version: 20161013104815) do
     t.string   "name"
     t.string   "litle_description"
     t.string   "description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "topics", force: :cascade do |t|

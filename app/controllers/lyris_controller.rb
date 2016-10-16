@@ -1,5 +1,6 @@
 class LyrisController < ApplicationController
   def Home
+    @styles = Style.all
   end
 
   def ListOfCourses
