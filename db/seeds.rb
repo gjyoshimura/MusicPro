@@ -40,22 +40,22 @@ BATERIA = Instrument.create([   name: 'Bateria',
                                 description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
 
 # #CURSOS
-ROCK1 = Topic.create([name: 'ROCK - Guitarra 1', style_id: ROCK,instrument_id: GUITARRA, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK2 = Topic.create([name: 'ROCK - Guitarra 2', style_id: ROCK,instrument_id: GUITARRA,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK3 = Topic.create([name: 'ROCK - Guitarra 3', style_id: ROCK,instrument_id: GUITARRA,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK1 = Topic.create([name: 'ROCK - Guitarra 1', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK2 = Topic.create([name: 'ROCK - Guitarra 2', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK3 = Topic.create([name: 'ROCK - Guitarra 3', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
 
-ROCK4 = Topic.create([name: 'ROCK - Violão 1', style_id: ROCK,instrument_id: VIOLAO,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK5 = Topic.create([name: 'ROCK - Violão 2', style_id: ROCK,instrument_id: VIOLAO,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK6 = Topic.create([name: 'ROCK - Violão 3', style_id: ROCK,instrument_id: VIOLAO,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK4 = Topic.create([name: 'ROCK - Violão 1', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK5 = Topic.create([name: 'ROCK - Violão 2', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK6 = Topic.create([name: 'ROCK - Violão 3', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
 
-ROCK7 = Topic.create([name: 'ROCK - Bateria 1', style_id: ROCK,instrument_id: BATERIA,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK8 = Topic.create([name: 'ROCK - Bateria 2', style_id: ROCK,instrument_id: BATERIA,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK9 = Topic.create([name: 'ROCK - Bateria 3', style_id: ROCK,instrument_id: BATERIA,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK7 = Topic.create([name: 'ROCK - Bateria 1', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK8 = Topic.create([name: 'ROCK - Bateria 2', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK9 = Topic.create([name: 'ROCK - Bateria 3', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
 
-POP1 = Topic.create([name: 'POP - Violão 1', style_id: POP,instrument_id: VIOLAO,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-POP2 = Topic.create([name: 'POP - Violão 2', style_id: POP,instrument_id: VIOLAO,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+POP1 = Topic.create([name: 'POP - Violão 1', style_id: POP[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+POP2 = Topic.create([name: 'POP - Violão 2', style_id: POP[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
 
-MPB1 = Topic.create([name: 'MPB - Violão 1', style_id: MPB,instrument_id: VIOLAO,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+MPB1 = Topic.create([name: 'MPB - Violão 1', style_id: MPB[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
 # #NAO COLOQUEI JAZZ PARA QUE TENHAMOS O CASO TESTE DE ESTAR VAZIO
 
 lesson1 = Lesson.create(name: 'Aula 001', topic_id: ROCK1, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')

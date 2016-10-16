@@ -16,6 +16,6 @@ class LyrisController < ApplicationController
   
   def StyleDescription
     @style = Style.find(params[:id])
-    @topics = Topic.all
+    @topics = Topic.where(style_id:params[:id],instrument_id: current_user.profiles[0].instrument)
   end
 end
