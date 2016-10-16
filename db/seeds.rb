@@ -27,12 +27,16 @@ JAZZ = Style.create([   name: 'Jazz',
 
 #INSTRUMENTOS
 GUITARRA = Instrument.create([  name: 'Guitarra', 
+                                :styles => Style.where(:id => [ROCK, JAZZ]),
                                 description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
-VIOLAO = Instrument.create([    name: 'Violão', 
+VIOLAO = Instrument.create([    name: 'Violão',  
+                                :styles => Style.where(:id => [ROCK, JAZZ,POP,MPB]),
                                 description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
-SAXOFONE= Instrument.create([  name: 'Saxofone', 
+SAXOFONE= Instrument.create([  name: 'Saxofone',  
+                                :styles => Style.where(:id => [JAZZ,MPB]),
                                 description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
-BATERIA = Instrument.create([   name: 'Bateria', 
+BATERIA = Instrument.create([   name: 'Bateria',  
+                                :styles => Style.where(:id => [ROCK, JAZZ,MPB,POP]),
                                 description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
 
 # #CURSOS

@@ -12,15 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Style" %><br>
-    <select id="style_id" name="profile[style_id]">
-      <% @styles.each do |style| %>
-        <option value= <%= style.id %> > 
-          <%= Style.find(style.id).name %> 
-        </option>
-      <% end %>
-    </select>
+  <%= collection_select(:profile,:style_id,@styles,:id,:name, {:prompt => "Escolha um estilo"}, {:class => "company_selection"}) %>
+  <%= f.collection_select :instrument_id, @instruments, :id, :name, {:prompt => "Escolha um instrumento"}, {:class=>"contact_selection"} %>  
   </div>
+  
   <!-- <div class="field">
     <%= f.label :level %><br>
     <%= f.number_field :level %>
@@ -33,3 +28,22 @@
     <%= f.submit "Submit" %>
   </div>
 <% end %>
+
+<script>
+  $(".company_selection").change(function(){
+  var value = $(this).val();
+  var path = "/ajax/get_contacts"
+  
+  $.ajax({
+    url: path,
+    type: 'GET',
+    data: {company_id:value},
+    success: function(data){
+      $("#products_list").html(data.products)
+    }
+  })
+})
+</script>
+
+
+

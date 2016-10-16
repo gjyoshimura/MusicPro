@@ -17,8 +17,8 @@ class ProfileHasInstrumentsController < ApplicationController
 
   # GET /profile_has_instruments/new
   def new
-    @profile_has_instrument = ProfileHasInstrument.new
-    @instruments = Instrument.all
+    @profile = current_user.profiles[0]
+    @instruments = current_user.profiles[0].style.instruments
   end
 
   # GET /profile_has_instruments/1/edit

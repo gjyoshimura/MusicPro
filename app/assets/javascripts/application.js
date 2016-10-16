@@ -19,5 +19,3 @@
 //= require js/util
 //= require js/main
 
-
-

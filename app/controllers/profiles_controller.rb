@@ -17,10 +17,17 @@ class ProfilesController < ApplicationController
   def show
   end
 
+  def get_contacts
+    @company = Style.all #style_id
+    @contacts = Style.find(params[:company_id]).instruments
+  end 
+  
+
   # GET /profiles/new
   def new
     @profile = Profile.new
     @styles = Style.all
+    @instruments = Instrument.all
   end
 
   # GET /profiles/1/edit

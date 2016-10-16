@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/listOflessons", to: "lyris#ListOfLessons", as: "listOfLessons"
   get "/lesson", to: "lyris#Lesson", as: "lesson"
   get "/style/:id", to: "lyris#StyleDescription", as: "styleDescription"
+  
+  get "/ajax/get_contacts", to: "profiles#get_contacts", as: "get_contacts"
 
   resources :styles
   resources :topics
