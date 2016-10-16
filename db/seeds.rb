@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #USUARIOS
-ADM = User.create([email: "admin@admin.com", password: "admin"])
-USER = User.create([email: "user@user.com", password: "user"])
+ADM = User.create([email: "admin@admin.com", password: "123456789"])
+USER = User.create([email: "user@user.com", password: "123456789"])
 
 
 #ESTILOS MUSICAIS

@@ -16,5 +16,6 @@ class LyrisController < ApplicationController
   
   def StyleDescription
     @style = Style.find(params[:id])
+    @topics = Topic.all
   end
 end

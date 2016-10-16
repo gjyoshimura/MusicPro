@@ -16,7 +16,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
   end
-
+  
+  #http://stackoverflow.com/questions/19909394/rails-dynamic-select-collection-select
   def get_contacts
     @company = Style.all #style_id
     @contacts = Style.find(params[:company_id]).instruments
@@ -87,6 +88,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:style_id, :level, :user_id)
+      params.require(:profile).permit(:style_id, :instrument_id, :level, :user_id)
     end
 end

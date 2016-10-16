@@ -28,7 +28,7 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h2>Um pouco sobre <%= @style.name %></h2>
+										<h2>Um pouco sobre <%= @style.name %> | <%= @topics.count%></h2>
 									</header>
 									<p><%= @style.description%></p>
 								</div>
@@ -36,9 +36,13 @@
 
 						<!-- Two -->
 							<section id="two" class="spotlights">
-								<%= render :partial => "lyris/partials/block1" %>
-								<%= render :partial => "lyris/partials/block2" %>
-								<%= render :partial => "lyris/partials/block1" %>
+								
+								<% @topics.each do |t| %>
+                            
+								<%= render :partial => "lyris/partials/block1", locals: {t: t} %>
+								
+								<% end %>
+								
 							</section>
 
 						<!-- Three -->
