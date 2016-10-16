@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013104815) do
+ActiveRecord::Schema.define(version: 20161016164920) do
+
+  create_table "Instruments_Styles", id: false, force: :cascade do |t|
+    t.integer "style_id",      null: false
+    t.integer "instrument_id", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.integer  "user_id"
-    t.integer  "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "lesson_id"
+    t.integer  "user_id"
   end
 
   add_index "comments", ["lesson_id"], name: "index_comments_on_lesson_id"
@@ -26,41 +31,40 @@ ActiveRecord::Schema.define(version: 20161013104815) do
 
   create_table "instruments", force: :cascade do |t|
     t.string   "name"
-    t.string   "image_path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.text     "description"
     t.string   "video_url"
-    t.string   "author"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "topic_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   add_index "lessons", ["topic_id"], name: "index_lessons_on_topic_id"
 
-  create_table "profile_has_instruments", force: :cascade do |t|
-    t.integer  "profile_id"
-    t.integer  "instrument_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "profile_has_instruments", ["instrument_id"], name: "index_profile_has_instruments_on_instrument_id"
-  add_index "profile_has_instruments", ["profile_id"], name: "index_profile_has_instruments_on_profile_id"
-
   create_table "profiles", force: :cascade do |t|
     t.integer  "level"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "instrument_id"
     t.integer  "style_id"
   end
 
+  add_index "profiles", ["instrument_id"], name: "index_profiles_on_instrument_id"
   add_index "profiles", ["style_id"], name: "index_profiles_on_style_id"
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
@@ -79,9 +83,18 @@ ActiveRecord::Schema.define(version: 20161013104815) do
   create_table "topics", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "style_id"
+    t.integer  "instrument_id"
   end
+
+  add_index "topics", ["instrument_id"], name: "index_topics_on_instrument_id"
+  add_index "topics", ["style_id"], name: "index_topics_on_style_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
