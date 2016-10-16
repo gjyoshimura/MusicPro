@@ -3,7 +3,8 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<%= render :partial => "lyris/nav" %>
+				<%= render :partial => "lyris/partials/nav" %>
+				<%= render :partial => "lyris/partials/bannerHome" %>
                 
 				<!-- Main -->
 					<div id="main">
@@ -14,7 +15,7 @@
 
                                 <% @styles.each do |s| %>
                             
-								<%= render :partial => "lyris/mainBlock", locals: {s: s} %>
+								<%= render :partial => "lyris/partials/mainBlock", locals: {s: s} %>
 								
 								<% end %>
 								

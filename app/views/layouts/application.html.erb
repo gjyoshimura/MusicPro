@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MusicPro</title>
+  <title>Liry it</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,6 +12,16 @@
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
+
+
+
+
+
+<style>
+  #banner {
+		background-image: url("<%= image_path 'banner.jpg'%>");
+  }
+</style>
 
 </body>
 </html>
