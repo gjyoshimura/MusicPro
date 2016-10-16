@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/listOfcourses", to: "lyris#ListOfCourses", as: "listOfCourses"
   get "/listOflessons", to: "lyris#ListOfLessons", as: "listOfLessons"
   get "/lesson", to: "lyris#Lesson", as: "lesson"
+  get "/style/:id", to: "lyris#StyleDescription", as: "styleDescription"
 
   resources :styles
   resources :topics

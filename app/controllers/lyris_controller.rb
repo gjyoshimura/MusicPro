@@ -13,4 +13,7 @@ class LyrisController < ApplicationController
 
   def Lesson
   end
+  
+  def StyleDescription
+  end
 end
