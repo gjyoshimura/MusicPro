@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/home", to: "lyris#Home", as: "home"
   get "/listOfcourses", to: "lyris#ListOfCourses", as: "listOfCourses"
   get "/listOflessons/:id", to: "lyris#ListOfLessons", as: "listOfLessons"
-  get "/lesson", to: "lyris#Lesson", as: "lesson"
+  get "/lesson/:id", to: "lyris#Lesson", as: "lesson"
   get "/style/:id", to: "lyris#StyleDescription", as: "styleDescription"
   
   get "/ajax/get_contacts", to: "profiles#get_contacts", as: "get_contacts"

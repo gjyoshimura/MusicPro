@@ -9,9 +9,11 @@ class LyrisController < ApplicationController
   end
 
   def ListOfLessons
+    @topic = Topic.find(params[:id])
   end
 
   def Lesson
+    @lesson = Lesson.find(params[:id])
   end
   
   def StyleDescription
