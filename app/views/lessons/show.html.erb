@@ -2,7 +2,7 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @lesson.title %>
+  <%= @lesson.name %>
 </p>
 
 <p>
@@ -16,11 +16,11 @@
    </div>
 </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @lesson.author %>
-</p>
 
+<p>
+  <strong>avatar:</strong>
+  <%= image_tag @lesson.topic.avatar %>
+</p>
 <p>
   <strong>Topic:</strong>
   <%= @lesson.topic.name %>

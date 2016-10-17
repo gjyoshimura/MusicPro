@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Lessons</h1>
+<h1>Todas as aulas criadas no site</h1>
 
 <table>
   <thead>
@@ -15,8 +15,7 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.title %></td>
-        <td><%= lesson.author %></td>
+        <td><%= lesson.name %></td>
         <td><%= lesson.topic.name %></td>
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>

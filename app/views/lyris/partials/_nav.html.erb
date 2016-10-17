@@ -20,7 +20,7 @@
           Logged in as <strong><%= current_user.email %></strong>.
          
          <li><%= link_to "Edit profile", edit_user_registration_path, :class => 'button special fit' %></li>
-        <li><%= link_to "Log out", destroy_user_session_path, :class => 'button fit'  %></li> 
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
           
           
         <% elsif not current_page?(new_user_registration_path) and not current_page?(new_user_session_path) %>
