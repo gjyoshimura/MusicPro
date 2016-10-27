@@ -1,4 +1,4 @@
-<%= form_for(@topic) do |f| %>
+<%= form_for(@topic, :html => { :multipart => true }) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
@@ -12,9 +12,26 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :style_id %><br>
+    <%= f.select :style_id, options_for_select(Style.all.collect{ |u| [u.name, u.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_id %><br>
+    <%= f.select :instrument_id, options_for_select(Instrument.all.collect{ |u| [u.name, u.id] }) %>
+  </div>
+  
+  
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  
+  
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>

@@ -1,0 +1,38 @@
+<% if !current_user %>
+                <!-- Banner -->
+                	<section id="banner" class="major">
+                		<div class="inner">
+                			<header class="major">
+                				
+                				<h1>A música só esta começando</h1>
+                	
+                			</header>
+                			<div class="content">
+                				<p>A responsive site template designed by HTML5 UP<br />
+                				and released under the Creative Commons.</p>
+                				<ul class="actions">
+                					<li><a href="#one" class="button next scrolly">Veja o que temos para você</a></li>
+                				</ul>
+                			</div>
+                		</div>
+                	</section>
+                <% else %>
+                
+                <!-- Banner -->
+                	<section id="banner" class="major">
+                		<div class="inner">
+                			<header class="major">
+                				
+                				<h1>Bem-vindo de volta, <%= current_user.email %>!</h1>
+                	
+                			</header>
+                			<div class="content">
+                				<p>A responsive site template designed by HTML5 UP<br />
+                				and released under the Creative Commons.</p>
+                				<ul class="actions">
+                					<li><a href="#one" class="button next scrolly">Continuar de onde parei</a></li>
+                				</ul>
+                			</div>
+                		</div>
+                	</section>
+                <% end %>

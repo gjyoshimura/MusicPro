@@ -16,11 +16,19 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
   end
+  
+  #http://stackoverflow.com/questions/19909394/rails-dynamic-select-collection-select
+  def get_contacts
+    @company = Style.all #style_id
+    @contacts = Style.find(params[:company_id]).instruments
+  end 
+  
 
   # GET /profiles/new
   def new
     @profile = Profile.new
     @styles = Style.all
+    @instruments = Instrument.all
   end
 
   # GET /profiles/1/edit
@@ -37,7 +45,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to new_profile_has_instrument_path, notice: 'Style was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Style was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -80,6 +88,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:style_id, :level, :user_id)
+      params.require(:profile).permit(:style_id, :instrument_id, :level, :user_id)
     end
 end

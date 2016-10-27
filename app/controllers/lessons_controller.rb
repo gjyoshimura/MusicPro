@@ -72,6 +72,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :description, :video_url, :author, :topic_id)
+      params.require(:lesson).permit(:name, :description, :video_url, :avatar, :topic_id)
     end
 end
