@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<a href="#" onClick="goSomewhere(); return false;">Exercise</a>
+<script type="text/javascript">
+    var urls = [
+        "a.html",
+        "b.html",
+	"c.html",
+	"d.html",
+	"e.html",
+    ];
+
+    function goSomewhere() {
+        var url = urls[Math.floor(Math.random()*urls.length)];
+        window.location = url; // redirect
+    }
+</script>
+
+</body>
+</html>
+

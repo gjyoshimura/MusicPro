@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id = "G" src = "g.jpeg">
+
+<button id = "A" onclick="myFunction(this.id)">A</button>
+<button id = "B" onclick="myFunction(this.id)">B</button>
+<button id = "C" onclick="myFunction(this.id)">C</button>
+<button id = "D" onclick="myFunction(this.id)">D</button>
+<button id = "E" onclick="myFunction(this.id)">E</button>
+<button id = "F" onclick="myFunction(this.id)">F</button>
+<button id = "G" onclick="myFunction(this.id)">G</button>
+<p id = "demo"></p>
+<script>
+function myFunction(id) {
+	var id_img = document.getElementById("G").getAttribute('id');
+    	var answer;
+	
+	if(id_img == id){
+		answer = "Correto";
+	}
+	else{
+ 		answer = "Incorreto, tente novamente"; 	 
+	}
+	 document.getElementById("demo").innerHTML = answer;
+}
+</script>
+
+</body>
+</html>
+
