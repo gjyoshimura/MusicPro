@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<img id = "D" src = "d.png">
+<img id = "Image" src = "D.png">
 
 <button id = "A" onclick="myFunction(this.id)">A</button>
 <button id = "B" onclick="myFunction(this.id)">B</button>
@@ -14,9 +14,10 @@
 <p id = "demo"></p>
 <script>
 function myFunction(id) {
-	var id_img = document.getElementById("D").getAttribute('id');
+	var id_img = document.getElementById("Image").getAttribute('src');
     	var answer;
-	
+	/*Retira a extensao da imagem*/
+	id_img = id_img.slice(0,1);
 	if(id_img == id){
 		answer = "Correto";
 	}
