@@ -13,31 +13,31 @@ USER = User.create([email: "user@user.com", password: "123456789"])
 
 #ESTILOS MUSICAIS
 MPB = Style.create([    name: 'MPB', 
-                        litle_description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 
-                        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                        litle_description:'Quero toda essa vontade de passar dos seus limites, e ir além ;)', 
+                        description:'Quero toda essa vontade de passar dos seus limites, e ir além ;)' ])
 ROCK = Style.create([   name: 'Rock', 
-                        litle_description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 
-                        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                        litle_description:'Num momento crucial um sábio soube saber que o sabiá sabia assobiar', 
+                        description:'Num momento crucial um sábio soube saber que o sabiá sabia assobiar' ])
 POP = Style.create([    name: 'POP', 
-                        litle_description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 
-                        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                        litle_description:'You wanna be tough, better do what you can', 
+                        description:'You wanna be tough, better do what you can' ])
 JAZZ = Style.create([   name: 'Jazz', 
-                        litle_description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 
-                        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                        litle_description:'And all that jazz', 
+                        description:'And all that jazz' ])
 
 #INSTRUMENTOS
 GUITARRA = Instrument.create([  name: 'Guitarra', 
                                 :styles => Style.where(:id => [ROCK, JAZZ]),
-                                description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                                description:'Evolua sua air guitar ;)' ])
 VIOLAO = Instrument.create([    name: 'Violão',  
                                 :styles => Style.where(:id => [ROCK, JAZZ,POP,MPB]),
-                                description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                                description:'Quer ser um mestre do MPB?' ])
 SAXOFONE= Instrument.create([  name: 'Saxofone',  
                                 :styles => Style.where(:id => [JAZZ,MPB]),
-                                description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                                description:'Aprenda com a Lisa Simpson' ])
 BATERIA = Instrument.create([   name: 'Bateria',  
                                 :styles => Style.where(:id => [ROCK, JAZZ,MPB,POP]),
-                                description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' ])
+                                description:'Prepare a baqueta e drum on ;) ' ])
 
 # #CURSOS
 ROCK1 = Topic.create([name: 'ROCK - Guitarra 1', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
@@ -58,11 +58,13 @@ POP2 = Topic.create([name: 'POP - Violão 2', style_id: POP[0].id,instrument_id:
 MPB1 = Topic.create([name: 'MPB - Violão 1', style_id: MPB[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
 # #NAO COLOQUEI JAZZ PARA QUE TENHAMOS O CASO TESTE DE ESTAR VAZIO
 
-lesson1 = Lesson.create(name: 'Aula 001', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson2 = Lesson.create(name: 'Aula 002', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson3 = Lesson.create(name: 'Aula 003', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson4 = Lesson.create(name: 'Aula 001', topic_id: ROCK2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson5 = Lesson.create(name: 'Aula 002', topic_id: ROCK2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
+lesson1 = Lesson.create(name: 'Aula 001', topic_id: ROCK1[0].id, description: 'Conhecendo o violão', video_url: 'https://www.youtube.com/embed/gLKXMPfpL_0')
+lesson2 = Lesson.create(name: 'Aula 002', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=z0oIRSJjbeo&list=PL_TqAU4yPHO7jB1P3vZCFiUVQHk_MpK1_&index=5&spfreload=10')
+lesson3 = Lesson.create(name: 'Aula 003', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=xlbqjvMyCMU')
+lesson4 = Lesson.create(name: 'Aula 001', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=WVctMaE-7Yo')
+lesson5 = Lesson.create(name: 'Aula 002', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=t1nfvTXXA4A')
+
+
 lesson6 = Lesson.create(name: 'Aula 003', topic_id: ROCK2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
 lesson7 = Lesson.create(name: 'Aula 004', topic_id: ROCK2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
 lesson8 = Lesson.create(name: 'Aula 001', topic_id: ROCK3[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
