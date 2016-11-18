@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   
   get "/ajax/get_contacts", to: "profiles#get_contacts", as: "get_contacts"
    
-  get "/tasks/inicio", to: "task#inicio", as: "task_inicio"
-  get "/tasks/exercicio/:id/:ime", to: "task#exercicio", as: "task_exercicio"
+  get "/tasks/exercicio", to: "task#exercicio", as: "task_exercicio"
   
     
 
