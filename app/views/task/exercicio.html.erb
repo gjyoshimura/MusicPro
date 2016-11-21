@@ -1,31 +1,56 @@
-<html>
-<body>
 
-<img id = "A" src = <%= @img %>>
+	<!-- Wrapper -->
+			<div id="wrapper">
 
-<button id = "A" onclick="myFunction(this.id)">A</button>
-<button id = "B" onclick="myFunction(this.id)">B</button>
-<button id = "C" onclick="myFunction(this.id)">C</button>
-<button id = "D" onclick="myFunction(this.id)">D</button>
-<button id = "E" onclick="myFunction(this.id)">E</button>
-<button id = "F" onclick="myFunction(this.id)">F</button>
-<button id = "G" onclick="myFunction(this.id)">G</button>
-<p id = "demo"></p>
-<script>
-function myFunction(id) {
-	var id_img = document.getElementById("A").getAttribute('id');
-    	var answer;
-	
-	if(id_img == id){
-		answer = "Correto!";
-	}
-	else{
- 		answer = "Incorreto, tente novamente"; 	 
-	}
-	 document.getElementById("demo").innerHTML = answer;
-}
-</script>
+				<!-- Main -->
+					<div id="main" class="alt">
 
-</body>
-</html>
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1></h1>
+									</header>
+									<span class="image main">
+									    
+										
+										<img id = "Image" src = /public/images/original/A.png>
+										<h1></h1>					
+										<button id = "A" onclick="myFunction(this.id)">A</button>
+										<button id = "B" onclick="myFunction(this.id)">B</button>
+										<button id = "C" onclick="myFunction(this.id)">C</button>
+										<button id = "D" onclick="myFunction(this.id)">D</button>
+										<button id = "E" onclick="myFunction(this.id)">E</button>
+										<button id = "F" onclick="myFunction(this.id)">F</button>
+										<button id = "G" onclick="myFunction(this.id)">G</button>
+										<p id = "demo"></p>
+										<script>
+										function myFunction(id) {
+											var id_img = document.getElementById("Image").getAttribute('src');
+										    	var answer;
+											/*Retira a extensao da imagem*/
+											id_img = id_img.slice(0,1);
+											if(id_img == id){
+												answer = "Correto";
+											}
+											else{
+										 		answer = "Incorreto, tente novamente"; 	 
+											}
+											 document.getElementById("demo").innerHTML = answer;
+										}
+										</script>
+
+								</div>
+							</section>
+					</div>
+
+		
+
+			<!-- Footer -->
+					<%= render :partial => "lyris/partials/footer" %>
+
+			</div>
+
+		<!-- Scripts -->
+
 
