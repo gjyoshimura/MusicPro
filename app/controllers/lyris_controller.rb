@@ -14,6 +14,7 @@ class LyrisController < ApplicationController
 
   def Lesson
     @lesson = Lesson.find(params[:id])
+    @comments = Comment.where("lesson_id = ?", @lesson.id).select("body, user_id")
   end
   
   def StyleDescription

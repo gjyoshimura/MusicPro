@@ -10,16 +10,23 @@
 									<header class="major">
 										<h1><%= @lesson.name %></h1>
 									</header>
+									<p><%= @lesson.description %></p>
 									<span class="image main">
 									    
 									<iframe width="100%" height="600" src="<%=  @lesson.video_url %>" frameborder="0" allowfullscreen></iframe>    
 									    
 									</span
 									
-									
-									
-									
-									<p><%= @lesson.description %></p>
+								</div>
+								<div class="inner">
+									<h2>Comentários</h2>
+									<p>
+									<% @comments.each do |comment| %>
+										<strong><%= comment.user.email %>:</strong> <%= comment.body %>
+										<br>
+									<% end %>
+									</p>
+									 <%= render :partial => "comments/form", :locals => {:comment => Comment.new, :lesson => @lesson.id} %>
 								</div>
 							</section>
 					</div>
