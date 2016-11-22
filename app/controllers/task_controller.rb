@@ -1,8 +1,7 @@
 class TaskController < ApplicationController
 
     def exercicio
-        @img = "A" + ".png"
-
+        @img = "A"
 
         
         

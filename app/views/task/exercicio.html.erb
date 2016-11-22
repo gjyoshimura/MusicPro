@@ -9,12 +9,13 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1></h1>
+										<h1>Exercícios</h1>
 									</header>
 									<span class="image main">
 									    
 										
-										<img id = "Image" src = /public/images/original/A.png>
+										<!-- <img id = "Image" src = "/A.png"> -->
+										<%= image_tag("/images/original/" + @img + ".png", :style => "width: 300px; height: 180px")%>
 										<h1></h1>					
 										<button id = "A" onclick="myFunction(this.id)">A</button>
 										<button id = "B" onclick="myFunction(this.id)">B</button>
@@ -26,17 +27,17 @@
 										<p id = "demo"></p>
 										<script>
 										function myFunction(id) {
-											var id_img = document.getElementById("Image").getAttribute('src');
+											var id_img = "<%= @img %>";
 										    	var answer;
 											/*Retira a extensao da imagem*/
-											id_img = id_img.slice(0,1);
+											/*id_img = id_img.slice(0,1);*/
 											if(id_img == id){
 												answer = "Correto";
 											}
 											else{
 										 		answer = "Incorreto, tente novamente"; 	 
 											}
-											 document.getElementById("demo").innerHTML = answer;
+											document.getElementById("demo").innerHTML = answer;
 										}
 										</script>
 
