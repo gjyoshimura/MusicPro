@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :check_signed_in
-  before_action :check_is_admin, only: [:index, :show, :edit, :update, :destroy]
+  before_action :check_is_admin, only: [:index, :show]
 
   # GET /comments
   # GET /comments.json
@@ -60,7 +60,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end
