@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/ajax/get_contacts", to: "profiles#get_contacts", as: "get_contacts"
    
   get "/tasks/exercicio", to: "task#exercicio", as: "task_exercicio"
-  
+  get "/tasks/audio", to: "task#audio", as: "task_audio"
     
 
   resources :styles

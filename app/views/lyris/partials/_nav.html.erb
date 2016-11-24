@@ -14,6 +14,7 @@
           Logged in as <strong><%= current_user.email %></strong>.
 	<li><%= link_to "Home", home_path, :class => 'button special fit' %></li>
         <li><%= link_to "Exercicios", task_exercicio_path, :class => 'button special fit' %></li>
+        <li><%= link_to "Exercicios de áudio", task_audio_path, :class => 'button special fit' %></li>
         <li><%= link_to "Edit profile", edit_user_registration_path, :class => 'button special fit' %></li>
         <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
           

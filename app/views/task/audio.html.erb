@@ -1,0 +1,67 @@
+
+	<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Qual é o acorde de violão abaixo?</h1>
+									</header>
+									<span class="image main">
+										<!-- <img id = "Image" src = "/A.png"> -->
+										<audio controls>
+										  <source src="/audios/<%=@aud%>.mp3" type="audio/mpeg">
+										Your browser does not support the audio element.
+										</audio>
+										<br>				
+										<br>				
+											<button id = "A" onclick="myFunction(this.id)">A</button>
+											<button id = "B" onclick="myFunction(this.id)">B</button>
+											<button id = "C" onclick="myFunction(this.id)">C</button>
+											<button id = "D" onclick="myFunction(this.id)">D</button>
+											<button id = "E" onclick="myFunction(this.id)">E</button>
+											<button id = "F" onclick="myFunction(this.id)">F</button>
+											<button id = "G" onclick="myFunction(this.id)">G</button>
+											<p id = "answer"></p>
+										</br>
+											
+ 										<br>
+											<%= link_to "próximo exercício", task_audio_path, :class => 'button special', :id => 'next', :style => "display: none" %>
+										</br>
+										<script>
+										function myFunction(id) {
+											var id_aud = "<%= @aud %>";
+										    	var answer;
+											/*Retira a extensao da imagem*/
+											/*id_img = id_img.slice(0,1);*/
+											if(id_aud == id){
+												answer = "Correto";
+												document.getElementById("next").style.display = "";
+											}
+											else{
+										 		answer = "Incorreto, tente novamente"; 	 
+												// document.getElementById("next").style.display = "";
+											}
+											document.getElementById("answer").innerHTML = answer;
+										}
+														
+										</script>
+
+								</div>
+							</section>
+					</div>
+
+		
+
+			<!-- Footer -->
+					<%= render :partial => "lyris/partials/footer" %>
+
+			</div>
+
+		<!-- Scripts -->
+
+
