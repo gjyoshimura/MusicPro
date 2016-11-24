@@ -28,7 +28,7 @@
 										</br>
 											
  										<br>
-											<%= link_to "próximo exercício", task_exercicio_path, :class => 'button special'%>
+											<%= link_to "próximo exercício", task_exercicio_path, :class => 'button special', :id => 'next', :style => "display: none" %>
 										</br>
 										<script>
 										function myFunction(id) {
@@ -38,11 +38,11 @@
 											/*id_img = id_img.slice(0,1);*/
 											if(id_img == id){
 												answer = "Correto";
-											//	document.getElementById("next").style.visibility = "visible";
+												document.getElementById("next").style.display = "";
 											}
 											else{
 										 		answer = "Incorreto, tente novamente"; 	 
-											//	document.getElementById("next").style.visibility = "hidden";
+												// document.getElementById("next").style.display = "";
 											}
 											document.getElementById("answer").innerHTML = answer;
 										}
