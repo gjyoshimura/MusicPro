@@ -8,20 +8,19 @@
 
 <!-- Menu -->
 <nav id="menu">
-	<ul class="links">
-		<li><a href="index.html">Home</a></li>	
-	</ul>
 	<ul class="actions vertical">
 		
 		<% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
-         
-         <li><%= link_to "Edit profile", edit_user_registration_path, :class => 'button special fit' %></li>
+	<li><%= link_to "Home", home_path, :class => 'button special fit' %></li>
+        <li><%= link_to "Exercicios", task_exercicio_path, :class => 'button special fit' %></li>
+        <li><%= link_to "Edit profile", edit_user_registration_path, :class => 'button special fit' %></li>
         <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
           
           
         <% elsif not current_page?(new_user_registration_path) and not current_page?(new_user_session_path) %>
-         <li><%= link_to "Sign up", new_user_registration_path, :class => 'button special fit' %></li>
+	<li><%= link_to "Home", home_path, :class => 'button special fit' %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'button special fit' %></li>
         <li><%= link_to "Log in", new_user_session_path, :class => 'button fit'  %></li>
         <% end %>
 		

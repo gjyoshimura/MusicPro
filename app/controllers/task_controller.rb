@@ -1,7 +1,8 @@
 class TaskController < ApplicationController
 
     def exercicio
-        @img = "A"
+	id = ('A'..'G').to_a.sample
+	@img = id
 
         
         
