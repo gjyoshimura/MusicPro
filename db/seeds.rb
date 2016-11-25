@@ -39,51 +39,66 @@ BATERIA = Instrument.create([   name: 'Bateria',
                                 :styles => Style.where(:id => [ROCK, JAZZ,MPB,POP]),
                                 description:'Prepare a baqueta e drum on ;) ' ])
 
-# #CURSOS
-ROCK1 = Topic.create([name: 'ROCK - Guitarra 1', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK2 = Topic.create([name: 'ROCK - Guitarra 2', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK3 = Topic.create([name: 'ROCK - Guitarra 3', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+#CURSOS
+ROCK1 = Topic.create([name: 'ROCK - Guitarra 1', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id, description:'Preparado para a sua primeira aula? Comece a caminhada rumo ao estrelato.'])
+ROCK2 = Topic.create([name: 'ROCK - Guitarra 2', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id,  description:'Gostou da primeira? Vem pra segunda ;)'])
+ROCK3 = Topic.create([name: 'ROCK - Guitarra 3', style_id: ROCK[0].id,instrument_id: GUITARRA[0].id,  description:'Muito bem!! Você é fera!'])
 
-ROCK4 = Topic.create([name: 'ROCK - Violão 1', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK5 = Topic.create([name: 'ROCK - Violão 2', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK6 = Topic.create([name: 'ROCK - Violão 3', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK4 = Topic.create([name: 'ROCK - Violão 1', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Preparado para a sua primeira aula? Comece a caminhada rumo ao estrelato.'])
+ROCK5 = Topic.create([name: 'ROCK - Violão 2', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Gostou da primeira? Vem pra segunda ;) '])
+ROCK6 = Topic.create([name: 'ROCK - Violão 3', style_id: ROCK[0].id,instrument_id: VIOLAO[0].id,  description:'Uhuuuul, praticamente um Beatle!'])
 
-ROCK7 = Topic.create([name: 'ROCK - Bateria 1', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK8 = Topic.create([name: 'ROCK - Bateria 2', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-ROCK9 = Topic.create([name: 'ROCK - Bateria 3', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+ROCK7 = Topic.create([name: 'ROCK - Bateria 1', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Nível: Homo neanderthalensis'])
+ROCK8 = Topic.create([name: 'ROCK - Bateria 2', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'TU DUM TSSSS'])
+ROCK9 = Topic.create([name: 'ROCK - Bateria 3', style_id: ROCK[0].id,instrument_id: BATERIA[0].id,  description:'Yeah!! Você é demais! Se continuar assim, John Bohan ficará com inveja.'])
 
-POP1 = Topic.create([name: 'POP - Violão 1', style_id: POP[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
-POP2 = Topic.create([name: 'POP - Violão 2', style_id: POP[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+POP1 = Topic.create([name: 'POP - Violão 1', style_id: POP[0].id,instrument_id: VIOLAO[0].id,  description:'Justin Bieber? Michael Jackson? Todos já foram iniciantes. Você também consegue!'])
+POP2 = Topic.create([name: 'POP - Violão 2', style_id: POP[0].id,instrument_id: VIOLAO[0].id,  description:'Vamos lá, mais um pouquinho :)'])
 
-MPB1 = Topic.create([name: 'MPB - Violão 1', style_id: MPB[0].id,instrument_id: VIOLAO[0].id,  description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'])
+MPB1 = Topic.create([name: 'MPB - Violão 1', style_id: MPB[0].id,instrument_id: VIOLAO[0].id,  description:'Um dia, os grandes nomes da música brasileira começaram do 0. Porque você também não poderia chegar lá?'])
+MPB2 = Topic.create([name: 'MPB - Violão 2', style_id: MPB[0].id,instrument_id: VIOLAO[0].id,  description:'Gostou da primeira? Vem pra segunda ;)'])
 # #NAO COLOQUEI JAZZ PARA QUE TENHAMOS O CASO TESTE DE ESTAR VAZIO
 
+#Rock Basico Guitar
 lesson1 = Lesson.create(name: 'Aula 001', topic_id: ROCK1[0].id, description: 'Conhecendo o violão', video_url: 'https://www.youtube.com/embed/gLKXMPfpL_0')
-lesson2 = Lesson.create(name: 'Aula 002', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=z0oIRSJjbeo&list=PL_TqAU4yPHO7jB1P3vZCFiUVQHk_MpK1_&index=5&spfreload=10')
-lesson3 = Lesson.create(name: 'Aula 003', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=xlbqjvMyCMU')
-lesson4 = Lesson.create(name: 'Aula 001', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=WVctMaE-7Yo')
-lesson5 = Lesson.create(name: 'Aula 002', topic_id: ROCK1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/watch?v=t1nfvTXXA4A')
+lesson2 = Lesson.create(name: 'Aula 002', topic_id: ROCK1[0].id, description: 'Como ler tablatura', video_url: 'https://www.youtube.com/embed/z0oIRSJjbeo?list=PL_TqAU4yPHO7jB1P3vZCFiUVQHk_MpK1_')
+lesson3 = Lesson.create(name: 'Aula 003', topic_id: ROCK1[0].id, description: 'Cordas', video_url: 'https://www.youtube.com/embed/xlbqjvMyCMU')
+lesson4 = Lesson.create(name: 'Aula 004', topic_id: ROCK1[0].id, description: 'Braço do violão', video_url: 'https://www.youtube.com/embed/WVctMaE-7Yo')
+lesson5 = Lesson.create(name: 'Aula 005', topic_id: ROCK1[0].id, description: 'Primeiros Acordes', video_url: 'https://www.youtube.com/embed/t1nfvTXXA4A')
+#Rock Intermediario Guitar
+lesson6 = Lesson.create(name: 'Aula 001', topic_id: ROCK2[0].id, description: 'À sua maneira - Capital Inicial', video_url: 'https://www.youtube.com/embed/HI7aaSOeGkI')
+lesson7 = Lesson.create(name: 'Aula 002', topic_id: ROCK2[0].id, description: 'Ainda é Cedo - Legião Urbana', video_url: 'https://www.youtube.com/embed/u0o_pX_M8KQ')
+#Rock Avancado Guitar
+lesson8 = Lesson.create(name: 'Aula 001', topic_id: ROCK3[0].id, description: 'Sweet Child O’ Mine - Guns and Roses', video_url: 'https://www.youtube.com/embed/Qg82m2nSpj8')
+lesson9 = Lesson.create(name: 'Aula 002', topic_id: ROCK3[0].id, description: 'Last kiss - Pearl Jam', video_url: 'https://www.youtube.com/embed/xk8Y0PvLEe8')
 
+#MPB Basico Violao
+lesson10 = Lesson.create(name: 'Aula 001', topic_id: MPB1[0].id, description: 'Conhecendo o violão', video_url: 'https://www.youtube.com/embed/gLKXMPfpL_0')
+lesson11 = Lesson.create(name: 'Aula 002', topic_id: MPB1[0].id, description: 'Como ler tablatura', video_url: 'https://www.youtube.com/embed/z0oIRSJjbeo?list=PL_TqAU4yPHO7jB1P3vZCFiUVQHk_MpK1_')
+lesson12 = Lesson.create(name: 'Aula 003', topic_id: MPB1[0].id, description: 'Cordas', video_url: 'https://www.youtube.com/embed/xlbqjvMyCMU')
+lesson13 = Lesson.create(name: 'Aula 004', topic_id: MPB1[0].id, description: 'Braço do violão', video_url: 'https://www.youtube.com/embed/WVctMaE-7Yo')
+lesson14 = Lesson.create(name: 'Aula 005', topic_id: MPB1[0].id, description: 'Primeiros Acordes', video_url: 'https://www.youtube.com/embed/t1nfvTXXA4A')
+#MPB Intermediario Violao
+lesson15 = Lesson.create(name: 'Aula 001', topic_id: MPB2[0].id, description: 'Fico assim sem você - Adriana Calcanhoto ', video_url: 'https://www.youtube.com/embed/eI1cBWbbnvA')
+lesson16 = Lesson.create(name: 'Aula 002', topic_id: MPB2[0].id, description: 'Palavras ao vento - Cassia Eller', video_url: 'https://www.youtube.com/embed/XQDCLBmr53w')
+lesson17 = Lesson.create(name: 'Aula 003', topic_id: MPB2[0].id, description: 'Aquarela - Toquinho', video_url: 'https://www.youtube.com/embed/3g29f3kt_QE')
 
-lesson6 = Lesson.create(name: 'Aula 003', topic_id: ROCK2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson7 = Lesson.create(name: 'Aula 004', topic_id: ROCK2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson8 = Lesson.create(name: 'Aula 001', topic_id: ROCK3[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson9 = Lesson.create(name: 'Aula 001', topic_id: ROCK4[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson10 = Lesson.create(name: 'Aula 002', topic_id: ROCK4[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson11 = Lesson.create(name: 'Aula 001', topic_id: ROCK5[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson12 = Lesson.create(name: 'Aula 002', topic_id: ROCK5[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson13 = Lesson.create(name: 'Aula 001', topic_id: ROCK6[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson14 = Lesson.create(name: 'Aula 002', topic_id: ROCK6[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson15 = Lesson.create(name: 'Aula 003', topic_id: ROCK6[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson14 = Lesson.create(name: 'Aula 001', topic_id: ROCK7[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson15 = Lesson.create(name: 'Aula 002', topic_id: ROCK7[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson14 = Lesson.create(name: 'Aula 001', topic_id: ROCK8[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson15 = Lesson.create(name: 'Aula 002', topic_id: ROCK8[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson16 = Lesson.create(name: 'Aula 001', topic_id: POP1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson17 = Lesson.create(name: 'Aula 002', topic_id: POP1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson18 = Lesson.create(name: 'Aula 003', topic_id: POP1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson19 = Lesson.create(name: 'Aula 001', topic_id: POP2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson20 = Lesson.create(name: 'Aula 002', topic_id: POP2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson21 = Lesson.create(name: 'Aula 003', topic_id: POP2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson22 = Lesson.create(name: 'Aula 004', topic_id: POP2[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
-lesson23 = Lesson.create(name: 'Aula 001', topic_id: MPB1[0].id, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', video_url: 'https://www.youtube.com/embed/o2YUM_3QCE4')
+#Rock Basico Violao
+lesson18 = Lesson.create(name: 'Aula 001', topic_id: ROCK4[0].id, description: 'Conhecendo o violão', video_url: 'https://www.youtube.com/embed/gLKXMPfpL_0')
+lesson19 = Lesson.create(name: 'Aula 002', topic_id: ROCK4[0].id, description: 'Como ler tablatura', video_url: 'https://www.youtube.com/embed/z0oIRSJjbeo?list=PL_TqAU4yPHO7jB1P3vZCFiUVQHk_MpK1_')
+lesson20 = Lesson.create(name: 'Aula 003', topic_id: ROCK4[0].id, description: 'Cordas', video_url: 'https://www.youtube.com/embed/xlbqjvMyCMU')
+lesson21 = Lesson.create(name: 'Aula 004', topic_id: ROCK4[0].id, description: 'Braço do violão', video_url: 'https://www.youtube.com/embed/WVctMaE-7Yo')
+lesson22 = Lesson.create(name: 'Aula 005', topic_id: ROCK4[0].id, description: 'Primeiros Acordes', video_url: 'https://www.youtube.com/embed/t1nfvTXXA4A')
+#Rock Intermediario Violao
+lesson23 = Lesson.create(name: 'Aula 001', topic_id: ROCK5[0].id, description: 'À sua maneira - Capital Inicial', video_url: 'https://www.youtube.com/embed/HI7aaSOeGkI')
+lesson24 = Lesson.create(name: 'Aula 002', topic_id: ROCK5[0].id, description: 'Ainda é Cedo - Legião Urbana', video_url: 'https://www.youtube.com/embed/u0o_pX_M8KQ')
+#Rock Avancado Violao
+lesson25 = Lesson.create(name: 'Aula 001', topic_id: ROCK6[0].id, description: 'Sweet Child O’ Mine - Guns and Roses', video_url: 'https://www.youtube.com/embed/Qg82m2nSpj8')
+lesson26 = Lesson.create(name: 'Aula 001', topic_id: ROCK6[0].id, description: 'Last kiss - Pearl Jam', video_url: 'https://www.youtube.com/embed/xk8Y0PvLEe8')
+
+#POP Basico Violao
+lesson27 = Lesson.create(name: 'Aula 001', topic_id: POP1[0].id, description: 'Conhecendo o violão', video_url: 'https://www.youtube.com/embed/gLKXMPfpL_0')
+lesson28 = Lesson.create(name: 'Aula 002', topic_id: POP1[0].id, description: 'Como ler tablatura', video_url: 'https://www.youtube.com/embed/z0oIRSJjbeo?list=PL_TqAU4yPHO7jB1P3vZCFiUVQHk_MpK1_')
+lesson29 = Lesson.create(name: 'Aula 003', topic_id: POP1[0].id, description: 'Cordas', video_url: 'https://www.youtube.com/embed/xlbqjvMyCMU')
+lesson30 = Lesson.create(name: 'Aula 004', topic_id: POP1[0].id, description: 'Braço do violão', video_url: 'https://www.youtube.com/embed/WVctMaE-7Yo')
+lesson31 = Lesson.create(name: 'Aula 005', topic_id: POP1[0].id, description: 'Primeiros Acordes', video_url: 'https://www.youtube.com/embed/t1nfvTXXA4A')
